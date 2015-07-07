@@ -16,8 +16,8 @@
 <div class="container" style='margin-top:20px'>
     <p>
     <span>
-        %if raspivid:
-            <a class='btn btn-success' href="rtsp://{{ip}}:9000/">Show the Preview!</a>
+        %if video:
+            <a class='btn btn-success' href="rtsp://{{ip}}:8554/">Show the Preview!</a>
         %else:
             <a class='btn btn-warning' href="/video">Start Video</a>
         %end
@@ -29,8 +29,9 @@
             <a class='btn btn-primary' href="/startTimelapse">Start the timelapse</a>
         %end
     </span>
+    <span class='pull-right'><a class='btn btn-danger' href='/unmount'>Unmount</a></span>
     </p>
-    <img width=480 height="270" alt="Latest shot" src="/static/latest.jpg">
+    <img class='img-thumbnail' alt="Latest shot" src="/static/latest.jpg">
     <p>
         Actual time: {{time}}
         <a class='btn btn-small' href='javascript:sendTime()'>Set time from browser</a>
